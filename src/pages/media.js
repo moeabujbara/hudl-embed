@@ -17,18 +17,21 @@ export default function Media(props) {
   useEffect(() => {
     fetchPlayistDetails();
   }, []);
+  
 
   if (error === null && media === null) {
     return <h3>loading...</h3>;
   } else {
     return media !== null ? (
-      media.map((index, key) => (
-        <div>
-          <h2 key={key} kid="new-text">
-            {index.title}
-          </h2>
-        </div>
-      ))
+      <ol>
+        {media.map((index, key) => (
+          <li key={index}>
+            <h4 id="texting-style" key={key} kid="new-text">
+              {index.title} 
+            </h4>
+          </li>
+        ))}
+      </ol>
     ) : (
       <h3>please try again later...</h3>
     );

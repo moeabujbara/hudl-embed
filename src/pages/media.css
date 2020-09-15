@@ -1,0 +1,11 @@
+#texting-style {
+  color: white;
+  position: relative;
+  padding-bottom: 3px;
+  line-height: 24px;
+  font-size: 12px;
+}
+ li {
+    color: #ffe5e5;
+    margin-left:20px ;
+  }
