@@ -1,11 +1,34 @@
 #texting-style {
-  color: white;
   position: relative;
-  padding-bottom: 3px;
-  line-height: 24px;
-  font-size: 12px;
+padding-left: 35px;
+padding-top: 3px;
+padding-bottom: 3px;
+line-height: 24px;
+font-size: 10px;
+  text-decoration-line: none;
+  color: #ffe5e5;
+  
+  
 }
  li {
     color: #ffe5e5;
     margin-left:20px ;
   }
+  #texting-style:hover + .hide {
+    display: block;
+    color: red;
+  }
+#release{
+  color: #ffe5e5;
+  padding-left: 75px;
+  margin-top: -110px;
+  width:fixed;
+  height:fixed ;
+   
+}
+#mainDiv{
+width:fixed;
+height:fixed ;
+position:absolute;
+
+}

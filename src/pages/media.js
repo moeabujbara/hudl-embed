@@ -5,10 +5,13 @@ import "./media.css";
 export default function Media(props) {
   let [media, setMedia] = useState([]);
   let [error, setError] = useState(null);
+  let [date, setDate] = useState(null);
+  let [show, setShow] = useState([false]);
 
   const fetchPlayistDetails = async () => {
     try {
       let response = await indexPlaylistMedia(props.playlistId);
+      console.log("Here you go moviedata component =>>", response);
       setMedia(response.data.media);
     } catch (error) {
       setError(error.message);
@@ -17,21 +20,34 @@ export default function Media(props) {
   useEffect(() => {
     fetchPlayistDetails();
   }, []);
-  
+
+  const mouseTrigger = (index) => {
+    setShow(true);
+    setDate(index.release_date);
+    console.warn(show);
+  };
 
   if (error === null && media === null) {
     return <h3>loading...</h3>;
   } else {
     return media !== null ? (
-      <ol>
-        {media.map((index, key) => (
-          <li key={index}>
-            <h4 id="texting-style" key={key} kid="new-text">
-              {index.title} 
-            </h4>
-          </li>
-        ))}
-      </ol>
+      <div id="mainDiv">
+        {show ? <div id="release">{date}</div> : null}
+        <ol>
+          {media.map((index, key) => (
+            <div
+              onMouseEnter={() => mouseTrigger(index)}
+              onMouseLeave={() => setShow(false)}
+            >
+              <li key={index}>
+                <a href="" id="texting-style" key={key}>
+                  {index.title}
+                </a>
+              </li>
+            </div>
+          ))}
+        </ol>
+      </div>
     ) : (
       <h3>please try again later...</h3>
     );
