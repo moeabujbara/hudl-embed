@@ -11,7 +11,6 @@ export default function Media(props) {
   const fetchPlayistDetails = async () => {
     try {
       let response = await indexPlaylistMedia(props.playlistId);
-      console.log("Here you go moviedata component =>>", response);
       setMedia(response.data.media);
     } catch (error) {
       setError(error.message);
