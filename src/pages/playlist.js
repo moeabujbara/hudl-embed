@@ -32,7 +32,7 @@ export default function Playlist() {
         <h2 id="text">item Amazing Playlist</h2>
         <h5 id="text1">Created by {playlist.user.username}</h5>
         <img id="profile" src={playlist.user.profile_picture.url} alt="profile-picture" />
-        
+        <Media playlistId={playlist.id} />
       </div>
     ) : (
         <h3>please try agian later</h3>
