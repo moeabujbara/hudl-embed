@@ -34,7 +34,7 @@ export default function Playlist() {
         <h5 id="text1">Created by {playlist.user.username}</h5>
         <img id="profile" src={playlist.user.profile_picture.url} alt="profile-picture" />
         <Media playlistId={playlist.id} />
-        <img src={footer}></img>
+        <img id="Footer" src={footer}></img>
       </div>
     ) : (
         <h3>please try agian later</h3>
