@@ -34,7 +34,7 @@ export default function Media(props) {
         {show ? <div id="release">{date}</div> : null}
         <ol>
           {media.map((index, key) => (
-            <div
+            <div id="main"
               onMouseEnter={() => mouseTrigger(index)}
               onMouseLeave={() => setShow(false)}
             >
