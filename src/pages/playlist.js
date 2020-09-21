@@ -4,6 +4,7 @@ import "./playlist.css";
 import logo from "../assets/logo.svg";
 import Media from "./media.js";
 import { useParams } from "react-router-dom";
+import footer from "../assets/footer.svg";
 
 export default function Playlist() {
   let [playlist, setPlaylist] = useState(null)
@@ -33,6 +34,7 @@ export default function Playlist() {
         <h5 id="text1">Created by {playlist.user.username}</h5>
         <img id="profile" src={playlist.user.profile_picture.url} alt="profile-picture" />
         <Media playlistId={playlist.id} />
+        <img src={footer}></img>
       </div>
     ) : (
         <h3>please try agian later</h3>
