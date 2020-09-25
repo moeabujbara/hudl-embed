@@ -7,11 +7,16 @@
   text-decoration-line: none;
   color: white;
 }
+
+.playBtn {
+  display: block;
+  margin-top: 7px;
+  padding-left: 5px;
+}
 li {
   color: #ffe5e5;
   margin-right: 50px;
   font-size: 10px;
-  
 }
 
 #release {
@@ -23,11 +28,61 @@ li {
   position: fixed;
 }
 #mainDiv {
-  width: fixed;
+  width: 100%;
   height: fixed;
   position: fixed;
 }
-#main{
-padding-left:80px ;
+.musicList {
+  padding-top: 40px;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-y: scroll; /* Add vertical scrollbar */
+  max-height: 200px;
+  width: 100%;
+}
+#main {
+  display: flex;
+  flex-direction: row;
+  padding-left: 80px;
+}
+#play {
+  margin-right: 20px;
+}
 
+#main:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.playBtn:hover {
+  cursor: pointer;
+}
+
+#main:hover.playBtn {
+  display: block;
+}
+.btnContainer {
+  width: 40px;
+}
+.btnContainer {
+  position: relative;
+  display: inline-block;
+}
+.btnContainer .tooltiptext {
+  visibility: hidden;
+  width: 70px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.btnContainer:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
