@@ -9,10 +9,22 @@
 }
 
 .playBtn {
-  display: block;
+  display: none;
   margin-top: 7px;
   padding-left: 5px;
 }
+.playBtn1 {
+  display:none;
+  margin-top: 7px;
+  padding-left: 1070px;
+  
+}
+.playBtn2 {
+  display: none;
+  margin-top: 7px;
+  padding-left: 1000px;
+}
+
 li {
   color: #ffe5e5;
   margin-right: 50px;
@@ -33,16 +45,16 @@ li {
   position: fixed;
 }
 .musicList {
-  padding-top: 40px;
+  padding-top: 60px;
   overflow-x: hidden; /* Hide horizontal scrollbar */
-  overflow-y: scroll; /* Add vertical scrollbar */
+  overflow-y: hidden; /* Add vertical scrollbar */
   max-height: 200px;
   width: 100%;
 }
 #main {
   display: flex;
   flex-direction: row;
-  padding-left: 80px;
+  padding-left: 40px;
 }
 #play {
   margin-right: 20px;
@@ -55,29 +67,76 @@ li {
 .playBtn:hover {
   cursor: pointer;
 }
+.playBtn1:hover {
+  cursor: pointer;
+}
+.playBtn2:hover {
+  cursor: pointer;
+}
 
-#main:hover.playBtn {
+.A{
+  margin-right:10px;
+}
+.B{
+  margin-left:5px;
+}
+.C{
+  margin-left:10px ;
+}
+
+
+#main:hover .playBtn {
   display: block;
 }
+#main:hover .playBtn1{
+  display: block;
+}
+#main:hover .playBtn2{
+  display: block;
+}
+
 .btnContainer {
+  width: 40px;
+}
+.btnContainer2 {
   width: 40px;
 }
 .btnContainer {
   position: relative;
   display: inline-block;
 }
+.btnContainer2 {
+  position: relative;
+  display: inline-block;
+}
 .btnContainer .tooltiptext {
   visibility: hidden;
-  width: 70px;
+  width: 50px;
   background-color: black;
   color: #fff;
   text-align: center;
   border-radius: 6px;
-  padding: 5px;
+  padding: 2px;
   position: absolute;
-  z-index: 1;
-  bottom: 150%;
-  left: 50%;
+  -index: 1;
+  bottom: 100%;
+  left:1150px;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.btnContainer2 .tooltiptext1 {
+  visibility: hidden;
+  width: 50px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 2px;
+  position: absolute;
+  -index: 1;
+  bottom: 100%;
+  left:1100px;
   margin-left: -75px;
   opacity: 0;
   transition: opacity 0.3s;
@@ -86,3 +145,9 @@ li {
   visibility: visible;
   opacity: 1;
 }
+.btnContainer2:hover .tooltiptext1 {
+  visibility: visible;
+  opacity: 1;
+}
+
+

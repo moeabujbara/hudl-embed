@@ -4,8 +4,11 @@ import "./media.css";
 import playBtn from "../assets/playButton.svg";
 import pauseBtn from "../assets/pauseButton.svg";
 import sharebtn from "..//assets/share.svg";
-
-
+import copybutton from "..//assets/copy.svg";
+import bar from "..//assets/progress-bar.svg";
+import play from "..//assets/play.svg";
+import shuffel from "..//assets/shuffel.svg";
+import repeat from "..//assets/repeat.svg";
 
 export default function Media(props) {
   let [media, setMedia] = useState([]);
@@ -60,12 +63,29 @@ export default function Media(props) {
     var tooltip = document.getElementById("myTooltip" + key);
     tooltip.innerText = "Copied";
   };
-  
+  const handleCopy1 = (text, key) => {
+    const el = document.createElement("textarea");
+    el.value = text;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand("copy");
+    document.body.removeChild(el);
+    var tooltip = document.getElementById("myTooltip1" + key);
+    tooltip.innerText = "Copied";
+  };
+
+  const onMouseout = (key) => {
+    var tooltip = document.getElementById("myTooltip" + key);
+    tooltip.innerText = "Copied";
+  };
+  const onMouseout1 = (key) => {
+    var tooltip = document.getElementById("myTooltip1" + key);
+    tooltip.innerText = "Copy";
+  };
 
   if (error === null && media === null) {
     return <h3>loading...</h3>;
-  } 
-  else {
+  } else {
     return media !== null ? (
       <div id="mainDiv">
         {show ? <div id="release">{date}</div> : null}
@@ -79,25 +99,31 @@ export default function Media(props) {
                 onMouseLeave={() => setShow(false)}
               >
                 <div className="btnContainer">
-                  {setShow ? (
-                    <div className="playBtn">
-                      <span
-                        key={key}
-                        className="tooltiptext"
-                        id={"myTooltip" + key}
-                      >
-                        Share
-                      </span>
-                      <img
-                        key={key}
-                        id="Share"
-                        onClick={() => handleCopy(index.url, key)}
-                        src={sharebtn}
-                      ></img>
-                    </div>
-                  ) : null}
+                  <div className="playBtn1">
+                    <img
+                      id="Share"
+                      onClick={() => handleCopy(index.url, key)}
+                      onMouseLeave={() => onMouseout(key)}
+                      src={sharebtn}
+                    ></img>
+                    <span className="tooltiptext" id={"myTooltip" + key}>
+                      Share
+                    </span>
+                  </div>
                 </div>
-
+                <div className="btnContainer2">
+                  <div className="playBtn2">
+                    <img
+                      id="Share"
+                      onClick={() => handleCopy1(index.url, key)}
+                      onMouseLeave={() => onMouseout1(key)}
+                      src={copybutton}
+                    ></img>
+                    <span className="tooltiptext1" id={"myTooltip1" + key}>
+                      Copy 
+                    </span>
+                  </div>
+                </div>
                 <div className="btnContainer">
                   {isPlaying ? (
                     <div className="playBtn" onClick={() => pauseMusic()}>
@@ -117,13 +143,19 @@ export default function Media(props) {
               </div>
             ))}
           </ol>
-          <audio id="audio" controls src={songURL}></audio>
+          <div>
+            <audio id="audio" controls src={songURL}></audio>
+            <img id="progresbar" src={bar}></img>
+            <center>
+              <img className="A" src={shuffel}></img>
+              <img className="B" onClick={() => playMusic()} src={play}></img>
+              <img className="C" onClick={() => playMusic()} src={repeat}></img>
+            </center>
+          </div>
         </div>
       </div>
-  
     ) : (
       <h3>please try again later...</h3>
     );
-    }}
-
-  
+  }
+}
