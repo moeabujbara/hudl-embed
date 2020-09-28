@@ -87,8 +87,9 @@ export default function Media(props) {
   };
   const repeatMusic = () => {
     var audio = document.getElementById("audio");
-    audio.play();
-  };
+      audio.currentTime = 0;
+      audio.play(); 
+    }
 
   if (error === null && media === null) {
     return <h3>loading...</h3>;
@@ -163,7 +164,8 @@ export default function Media(props) {
                   src={pauseBtn}
                 ></img>
               ) : (
-                <img className="B" onClick={() => playMusic()} src={play}></img>
+                <img className="B" onClick={() => playMusic()}
+                 src={play}></img>
               )}
               <img
                 className="C"
