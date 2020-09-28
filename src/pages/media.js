@@ -19,6 +19,7 @@ export default function Media(props) {
   let [show, setShow] = useState(false);
   let [maindisplay, setDisplay] = useState(null);
   let [boolofdisplay, setbool] = useState([false]);
+  let [isPlaying1, setIsPlaying1] = useState(false);
 
   const fetchPlayistDetails = async () => {
     try {
@@ -44,6 +45,7 @@ export default function Media(props) {
     console.warn(audio);
     audio.play();
     setIsPlaying(true);
+    setIsPlaying1(true);
   };
 
   const pauseMusic = () => {
@@ -52,6 +54,7 @@ export default function Media(props) {
     console.warn(audio);
     audio.pause();
     setIsPlaying(false);
+    setIsPlaying1(false);
   };
   const handleCopy = (text, key) => {
     const el = document.createElement("textarea");
@@ -81,6 +84,10 @@ export default function Media(props) {
   const onMouseout1 = (key) => {
     var tooltip = document.getElementById("myTooltip1" + key);
     tooltip.innerText = "Copy";
+  };
+  const repeatMusic = () => {
+    var audio = document.getElementById("audio");
+    audio.play();
   };
 
   if (error === null && media === null) {
@@ -120,7 +127,7 @@ export default function Media(props) {
                       src={copybutton}
                     ></img>
                     <span className="tooltiptext1" id={"myTooltip1" + key}>
-                      Copy 
+                      Copy
                     </span>
                   </div>
                 </div>
@@ -148,8 +155,21 @@ export default function Media(props) {
             <img id="progresbar" src={bar}></img>
             <center>
               <img className="A" src={shuffel}></img>
-              <img className="B" onClick={() => playMusic()} src={play}></img>
-              <img className="C" onClick={() => playMusic()} src={repeat}></img>
+
+              {isPlaying1 ? (
+                <img
+                  className="B"
+                  onClick={() => pauseMusic()}
+                  src={pauseBtn}
+                ></img>
+              ) : (
+                <img className="B" onClick={() => playMusic()} src={play}></img>
+              )}
+              <img
+                className="C"
+                onClick={() => repeatMusic()}
+                src={repeat}
+              ></img>
             </center>
           </div>
         </div>
