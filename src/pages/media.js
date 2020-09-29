@@ -9,6 +9,7 @@ import bar from "..//assets/progress-bar.svg";
 import play from "..//assets/play.svg";
 import shuffel from "..//assets/shuffel.svg";
 import repeat from "..//assets/repeat.svg";
+import Moment from 'react-moment';
 
 export default function Media(props) {
   let [media, setMedia] = useState([]);
@@ -20,6 +21,8 @@ export default function Media(props) {
   let [maindisplay, setDisplay] = useState(null);
   let [boolofdisplay, setbool] = useState([false]);
   let [isPlaying1, setIsPlaying1] = useState(false);
+  let [isCheck, setCheck] = useState(false);
+  let index;
 
   const fetchPlayistDetails = async () => {
     try {
@@ -46,6 +49,7 @@ export default function Media(props) {
     audio.play();
     setIsPlaying(true);
     setIsPlaying1(true);
+    setCheck(true);
   };
 
   const pauseMusic = () => {
@@ -79,7 +83,7 @@ export default function Media(props) {
 
   const onMouseout = (key) => {
     var tooltip = document.getElementById("myTooltip" + key);
-    tooltip.innerText = "Copied";
+    tooltip.innerText = "Share";
   };
   const onMouseout1 = (key) => {
     var tooltip = document.getElementById("myTooltip1" + key);
@@ -87,16 +91,22 @@ export default function Media(props) {
   };
   const repeatMusic = () => {
     var audio = document.getElementById("audio");
-      audio.currentTime = 0;
-      audio.play(); 
-    }
+    console.warn(">>>>>", audio);
+    audio.currentTime = 0;
+    audio.play();
+  };
+  const ShaffelMusic = () => {
+    var audio = document.getElementById("audio");
+
+    audio.play();
+  };
 
   if (error === null && media === null) {
     return <h3>loading...</h3>;
   } else {
     return media !== null ? (
       <div id="mainDiv">
-        {show ? <div id="release">{date}</div> : null}
+        {show ? <div id="release"> Release  <Moment format="MMMM DD, YYYY">{date}</Moment></div> : null}
         <div>
           <ol className="musicList">
             {media.map((index, key) => (
@@ -106,6 +116,7 @@ export default function Media(props) {
                 onMouseEnter={() => mouseTrigger(index)}
                 onMouseLeave={() => setShow(false)}
               >
+            
                 <div className="btnContainer">
                   <div className="playBtn1">
                     <img
@@ -155,7 +166,11 @@ export default function Media(props) {
             <audio id="audio" controls src={songURL}></audio>
             <img id="progresbar" src={bar}></img>
             <center>
-              <img className="A" src={shuffel}></img>
+              <img
+                className="A"
+                onClick={() => ShaffelMusic()}
+                src={shuffel}
+              ></img>
 
               {isPlaying1 ? (
                 <img
@@ -164,14 +179,17 @@ export default function Media(props) {
                   src={pauseBtn}
                 ></img>
               ) : (
-                <img className="B" onClick={() => playMusic()}
-                 src={play}></img>
+                <img className="B" onClick={() => playMusic()} src={play}></img>
               )}
-              <img
-                className="C"
-                onClick={() => repeatMusic()}
-                src={repeat}
-              ></img>
+              {isCheck ? (
+                <img
+                  className="C"
+                  onClick={() => repeatMusic()}
+                  src={repeat}
+                ></img>
+              ) : (
+                <img className="C" src={repeat}></img>
+              )}
             </center>
           </div>
         </div>
