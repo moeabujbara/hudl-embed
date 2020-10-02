@@ -1,59 +1,51 @@
-#texting-style {
-  position: relative;
-  padding-top: 3px;
-  padding-bottom: 3px;
+#mainDiv {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#listSection {
+  flex: 1.5;
+}
+#audioSection {
+  flex: 1.5;
+}
+
+#audioTitle {
   line-height: 24px;
   font-size: 10px;
   text-decoration-line: none;
   color: white;
 }
 
-.playBtn {
+#playPauseBtn {
   display: none;
-  margin-top: 7px;
-  padding-left: 5px;
+  top: 7px;
+  position: absolute;
+  left: 5px;
 }
-.playBtn1 {
-  display:none;
-  margin-top: 7px;
-  padding-left: 1070px;
-  
-}
-.playBtn2 {
+#rightButtons {
   display: none;
-  margin-top: 7px;
-  padding-left: 1000px;
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  flex-direction: row;
 }
 
 li {
   color: #ffe5e5;
-  margin-right: 50px;
+  font-size: 11px;
+  margin-left: 10px;
+}
+#listItem {
+  position: relative;
+  padding-left: 35px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  line-height: 24px;
   font-size: 10px;
-}
-#release {
-  color: #ffe5e5;
-  padding-left: 75px;
-  margin-top: -110px;
-  width: fixed;
-  height: fixed;
-  position: fixed;
-}
-#mainDiv {
-  width: 100%;
-  height: fixed;
-  position: fixed;
-}
-.musicList {
-  padding-top: 60px;
-  overflow-x: hidden; /* Hide horizontal scrollbar */
-  overflow-y: hidden; /* Add vertical scrollbar */
-  max-height: 200px;
-  width: 100%;
-}
-#main {
-  display: flex;
-  flex-direction: row;
-  padding-left: 40px;
+  align-items: center;
+  justify-content: space-between;
 }
 #play {
   margin-right: 20px;
@@ -63,7 +55,11 @@ li {
   background: rgba(255, 255, 255, 0.5);
 }
 
-.playBtn:hover {
+.selectedList{
+  background: rgba(255, 255, 255, 0.5);
+}
+
+#playPauseBtn:hover {
   cursor: pointer;
 }
 .playBtn1:hover {
@@ -73,42 +69,34 @@ li {
   cursor: pointer;
 }
 
-.A{
-  margin-right:10px;
+.A {
+  margin-right: 10px;
 }
-.B{
-  margin-left:5px;
+.B {
+  margin-left: 5px;
 }
-.C{
-  margin-left:10px ;
-}
-
-
-#main:hover .playBtn {
-  display: block;
-}
-#main:hover .playBtn1{
-  display: block;
-}
-#main:hover .playBtn2{
-  display: block;
+.C {
+  margin-left: 10px;
 }
 
-.btnContainer {
+#main:hover #playPauseBtn {
+  display: block;
+}
+#main:hover #rightButtons {
+  display: flex;
+}
+#main:hover .playBtn1 {
+  display: block;
+}
+#main:hover .playBtn2 {
+  display: block;
+}
+
+#rightButtons {
   width: 40px;
 }
-.btnContainer2 {
-  width: 40px;
-}
-.btnContainer {
-  position: relative;
-  display: inline-block;
-}
-.btnContainer2 {
-  position: relative;
-  display: inline-block;
-}
-.btnContainer .tooltiptext {
+
+#shareBtn .tooltiptext {
   visibility: hidden;
   width: 50px;
   background-color: black;
@@ -119,12 +107,12 @@ li {
   position: absolute;
   -index: 1;
   bottom: 100%;
-  left:1150px;
+  left: 1150px;
   margin-left: -75px;
   opacity: 0;
   transition: opacity 0.3s;
 }
-.btnContainer2 .tooltiptext1 {
+#copyBtn .tooltiptext1 {
   visibility: hidden;
   width: 50px;
   background-color: black;
@@ -135,18 +123,20 @@ li {
   position: absolute;
   -index: 1;
   bottom: 100%;
-  left:1100px;
+  left: 1100px;
   margin-left: -75px;
   opacity: 0;
   transition: opacity 0.3s;
 }
-.btnContainer:hover .tooltiptext {
+#shareBtn:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
 }
-.btnContainer2:hover .tooltiptext1 {
+#copyBtn:hover .tooltiptext1 {
   visibility: visible;
   opacity: 1;
 }
 
-
+.showBtns{
+  display: flex !important;
+}
