@@ -7,28 +7,51 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#playListTopSection {
+  flex: 2.5;
+  position: relative;
+  padding-left: 3rem;
+}
+
+#bottomPlayListSection {
+  flex: 3;
+  position: relative;
+  padding-right: 3rem;
 }
 
 #logo {
   padding-top: 0.5cm;
 }
 #profile {
-  max-width: 20%;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  max-width: 25%;
   max-height: calc(100% - 40px);
-  margin-left: 1000px;
-  border-radius: 15px;
-  margin-top: -4cm;
+  border-radius: 0.25rem !important;
 }
 #text {
+  margin: 0px;
   color: #fff !important;
-  margin-left: 2cm;
+  font-size: 18px;
+  margin-bottom: 0.5rem;
 }
 #text1 {
+  margin: 0px;
   color: #fff !important;
-  margin-left: 2cm;
+  font-size: 12px;
 }
-#footer{
-padding-left:1120px;
-padding-top: 250px;
-
+#releaseDateText{
+  font-size: 9px;
+  color: #6c757d !important;
+  margin-top: 5px;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
