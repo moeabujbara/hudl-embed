@@ -5,16 +5,16 @@ import playBtn from "../assets/playButton.svg";
 import pauseBtn from "../assets/pauseButton.svg";
 import sharebtn from "..//assets/share.svg";
 import copybutton from "..//assets/copy.svg";
-import bar from "..//assets/progress-bar.svg";
 import play from "..//assets/play.svg";
 import shuffel from "..//assets/shuffel.svg";
 import repeat from "..//assets/repeat.svg";
 import Moment from "react-moment";
+import Progressbar from "./progressbar";
 
 export default function Media(props) {
   let [media, setMedia] = useState([]);
+  let [svgColor, setSvgColor] = useState([]);
   let [error, setError] = useState(null);
-  let [date, setDate] = useState(null);
   let [songURL, setSongURL] = useState(null);
   let [selectedID, setSelectedID] = useState(null);
   let [isPlaying, setIsPlaying] = useState(false);
@@ -39,7 +39,6 @@ export default function Media(props) {
 
   const mouseTrigger = (index) => {
     setShow(true);
-    setDate(index.release_date);
     props.showReleasDate(true);
     props.setReleaseDate(index.release_date);
     setSongURL(index.url);
@@ -56,6 +55,14 @@ export default function Media(props) {
     audio.play();
     setSelectedID(index.id);
     setIsPlaying(true);
+    console.warn(audio.duration);
+    var interval = (audio.duration / 49) * 1000;
+    var counter = 0;
+    setInterval(() => {
+      setSvgColor([...svgColor, (svgColor[counter] = "darkgreen")]);
+      console.warn("svgColor", svgColor);
+      counter++;
+    }, interval);
   };
   const pauseMusic = () => {
     console.warn("PAUSE ", isPlaying);
@@ -66,10 +73,10 @@ export default function Media(props) {
   };
 
   const playMusic2 = () => {
-    if(!songURL){
+    if (!songURL) {
       var firstSong = media[0];
-      setSelectedID(firstSong.id)
-      setSongURL(firstSong.url)
+      setSelectedID(firstSong.id);
+      setSongURL(firstSong.url);
     }
     setIsPlaying(false);
     var audio = document.getElementById("audio");
@@ -122,11 +129,14 @@ export default function Media(props) {
   };
   const ShaffelMusic = () => {
     var selectedSong = media[Math.floor(Math.random() * media.length)];
-    setSelectedID(selectedSong.id)
-    setSongURL(selectedSong.url)
+    setSelectedID(selectedSong.id);
+    setSongURL(selectedSong.url);
     var player = document.getElementById("audio");
 
     player.play();
+    console.warn(player.currentSrc());
+    console.warn(player.currentTime());
+    console.warn(player.duration());
   };
 
   if (error === null && media === null) {
@@ -198,7 +208,7 @@ export default function Media(props) {
         </div>
         <div id="audioSection">
           <audio id="audio" controls src={songURL}></audio>
-          <img id="progresbar" src={bar}></img>
+          <Progressbar fill={svgColor} />
           <center>
             <img
               className="A"
