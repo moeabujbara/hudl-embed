@@ -104,7 +104,7 @@ const progressbar = (props) => {
         width="14"
         height="42.4286"
         rx="7"
-        fill={props.fill[10]}
+        fill={props.fill[22]}
         fillOpacity="0.2"
       />
       <rect
@@ -113,7 +113,7 @@ const progressbar = (props) => {
         width="14"
         height="29.8929"
         rx="7"
-        fill={props.fill[11]}
+        fill={props.fill[23]}
         fillOpacity="0.2"
       />
       <rect
@@ -122,7 +122,7 @@ const progressbar = (props) => {
         width="13"
         height="47.25"
         rx="6.5"
-        fill={props.fill[12]}
+        fill={props.fill[24]}
         fillOpacity="0.2"
       />
       <rect
@@ -131,7 +131,7 @@ const progressbar = (props) => {
         width="13"
         height="42.4286"
         rx="6.5"
-        fill={props.fill[13]}
+        fill={props.fill[25]}
         fillOpacity="0.2"
       />
       <rect
@@ -139,7 +139,7 @@ const progressbar = (props) => {
         width="14"
         height="54"
         rx="7"
-        fill={props.fill[14]}
+        fill={props.fill[26]}
         fillOpacity="0.2"
       />
       <rect
@@ -148,7 +148,7 @@ const progressbar = (props) => {
         width="15"
         height="32.7857"
         rx="7.5"
-        fill={props.fill[15]}
+        fill={props.fill[27]}
         fillOpacity="0.2"
       />
       <rect
@@ -157,7 +157,7 @@ const progressbar = (props) => {
         width="13"
         height="40.5"
         rx="6.5"
-        fill={props.fill[16]}
+        fill={props.fill[28]}
         fillOpacity="0.2"
       />
       <rect
@@ -166,7 +166,7 @@ const progressbar = (props) => {
         width="13"
         height="40.5"
         rx="6.5"
-        fill={props.fill[17]}
+        fill={props.fill[29]}
         fillOpacity="0.2"
       />
       <rect
@@ -175,7 +175,7 @@ const progressbar = (props) => {
         width="14"
         height="13.5"
         rx="6.75"
-        fill={props.fill[18]}
+        fill={props.fill[20]}
         fillOpacity="0.2"
       />
       <rect
@@ -184,7 +184,7 @@ const progressbar = (props) => {
         width="14"
         height="25.0714"
         rx="7"
-        fill={props.fill[19]}
+        fill={props.fill[21]}
         fillOpacity="0.2"
       />
       <rect
@@ -192,7 +192,7 @@ const progressbar = (props) => {
         height="42.4286"
         rx="7"
         transform="matrix(-1 0 0 1 1409 5.78571)"
-        fill={props.fill[20]}
+        fill={props.fill[22]}
         fillOpacity="0.2"
       />
       <rect
@@ -200,7 +200,7 @@ const progressbar = (props) => {
         height="29.8929"
         rx="7"
         transform="matrix(-1 0 0 1 1379 11.5714)"
-        fill={props.fill[21]}
+        fill={props.fill[47]}
         fillOpacity="0.2"
       />
       <rect
@@ -208,7 +208,7 @@ const progressbar = (props) => {
         height="47.25"
         rx="6.5"
         transform="matrix(-1 0 0 1 1349 3.375)"
-        fill={props.fill[22]}
+        fill={props.fill[46]}
         fillOpacity="0.2"
       />
       <rect
@@ -216,7 +216,7 @@ const progressbar = (props) => {
         height="42.4286"
         rx="6.5"
         transform="matrix(-1 0 0 1 1320 5.78571)"
-        fill={props.fill[23]}
+        fill={props.fill[45]}
         fillOpacity="0.2"
       />
       <rect
@@ -224,7 +224,7 @@ const progressbar = (props) => {
         height="54"
         rx="7"
         transform="matrix(-1 0 0 1 1291 0)"
-        fill={props.fill[24]}
+        fill={props.fill[44]}
         fillOpacity="0.2"
       />
       <rect
@@ -232,7 +232,7 @@ const progressbar = (props) => {
         height="32.7857"
         rx="7.5"
         transform="matrix(-1 0 0 1 1261 10.6071)"
-        fill={props.fill[20]}
+        fill={props.fill[43]}
         fillOpacity="0.2"
       />
       <rect
@@ -240,7 +240,7 @@ const progressbar = (props) => {
         height="40.5"
         rx="6.5"
         transform="matrix(-1 0 0 1 1230 6.75)"
-        fill={props.fill[20]}
+        fill={props.fill[42]}
         fillOpacity="0.2"
       />
       <rect
@@ -248,7 +248,7 @@ const progressbar = (props) => {
         height="40.5"
         rx="6.5"
         transform="matrix(-1 0 0 1 1201 6.75)"
-        fill={props.fill[20]}
+        fill={props.fill[41]}
         fillOpacity="0.2"
       />
       <rect
@@ -256,7 +256,7 @@ const progressbar = (props) => {
         height="25.0714"
         rx="7"
         transform="matrix(-1 0 0 1 1439 13.9821)"
-        fill={props.fill[20]}
+        fill={props.fill[38]}
         fillOpacity="0.2"
       />
       <rect
@@ -264,7 +264,7 @@ const progressbar = (props) => {
         height="42.4286"
         rx="7"
         transform="matrix(-1 0 0 1 518 5.78571)"
-        fill={props.fill[20]}
+        fill={props.fill[17]}
         fillOpacity="0.2"
       />
       <rect
@@ -272,7 +272,7 @@ const progressbar = (props) => {
         height="29.8929"
         rx="7"
         transform="matrix(-1 0 0 1 488 11.5714)"
-        fill={props.fill[20]}
+        fill={props.fill[16]}
         fillOpacity="0.2"
       />
       <rect
@@ -280,7 +280,7 @@ const progressbar = (props) => {
         height="47.25"
         rx="6.5"
         transform="matrix(-1 0 0 1 458 3.375)"
-        fill={props.fill[20]}
+        fill={props.fill[15]}
         fillOpacity="0.2"
       />
       <rect
@@ -288,7 +288,7 @@ const progressbar = (props) => {
         height="42.4286"
         rx="6.5"
         transform="matrix(-1 0 0 1 429 5.78571)"
-        fill={props.fill[20]}
+        fill={props.fill[14]}
         fillOpacity="0.2"
       />
       <rect
@@ -296,7 +296,7 @@ const progressbar = (props) => {
         height="54"
         rx="7"
         transform="matrix(-1 0 0 1 400 0)"
-        fill={props.fill[20]}
+        fill={props.fill[13]}
         fillOpacity="0.2"
       />
       <rect
@@ -304,7 +304,7 @@ const progressbar = (props) => {
         height="32.7857"
         rx="7.5"
         transform="matrix(-1 0 0 1 370 10.6071)"
-        fill={props.fill[20]}
+        fill={props.fill[12]}
         fillOpacity="0.2"
       />
       <rect
@@ -312,7 +312,7 @@ const progressbar = (props) => {
         height="40.5"
         rx="6.5"
         transform="matrix(-1 0 0 1 339 6.75)"
-        fill={props.fill[20]}
+        fill={props.fill[11]}
         fillOpacity="0.2"
       />
       <rect
@@ -320,7 +320,7 @@ const progressbar = (props) => {
         height="40.5"
         rx="6.5"
         transform="matrix(-1 0 0 1 310 6.75)"
-        fill={props.fill[20]}
+        fill={props.fill[10]}
         fillOpacity="0.2"
       />
       <rect
@@ -328,7 +328,7 @@ const progressbar = (props) => {
         height="13.5"
         rx="6.75"
         transform="matrix(-1 0 0 1 578 19.7679)"
-        fill={props.fill[20]}
+        fill={props.fill[19]}
         fillOpacity="0.2"
       />
       <rect
@@ -336,7 +336,7 @@ const progressbar = (props) => {
         height="25.0714"
         rx="7"
         transform="matrix(-1 0 0 1 548 13.9821)"
-        fill={props.fill[20]}
+        fill={props.fill[18]}
         fillOpacity="0.2"
       />
       <rect
@@ -344,7 +344,7 @@ const progressbar = (props) => {
         height="42.4286"
         rx="7"
         transform="matrix(-1 0 0 1 1112 5.78571)"
-        fill={props.fill[20]}
+        fill={props.fill[37]}
         fillOpacity="0.2"
       />
       <rect
@@ -352,7 +352,7 @@ const progressbar = (props) => {
         height="29.8929"
         rx="7"
         transform="matrix(-1 0 0 1 1082 11.5714)"
-        fill={props.fill[20]}
+        fill={props.fill[36]}
         fillOpacity="0.2"
       />
       <rect
@@ -360,7 +360,7 @@ const progressbar = (props) => {
         height="47.25"
         rx="6.5"
         transform="matrix(-1 0 0 1 1052 3.375)"
-        fill={props.fill[20]}
+        fill={props.fill[35]}
         fillOpacity="0.2"
       />
       <rect
@@ -368,7 +368,7 @@ const progressbar = (props) => {
         height="42.4286"
         rx="6.5"
         transform="matrix(-1 0 0 1 1023 5.78571)"
-        fill={props.fill[20]}
+        fill={props.fill[34]}
         fillOpacity="0.2"
       />
       <rect
@@ -376,7 +376,7 @@ const progressbar = (props) => {
         height="54"
         rx="7"
         transform="matrix(-1 0 0 1 994 0)"
-        fill={props.fill[20]}
+        fill={props.fill[33]}
         fillOpacity="0.2"
       />
       <rect
@@ -384,7 +384,7 @@ const progressbar = (props) => {
         height="32.7857"
         rx="7.5"
         transform="matrix(-1 0 0 1 964 10.6071)"
-        fill={props.fill[20]}
+        fill={props.fill[32]}
         fillOpacity="0.2"
       />
       <rect
@@ -392,7 +392,7 @@ const progressbar = (props) => {
         height="40.5"
         rx="6.5"
         transform="matrix(-1 0 0 1 933 6.75)"
-        fill={props.fill[20]}
+        fill={props.fill[31]}
         fillOpacity="0.2"
       />
       <rect
@@ -400,7 +400,7 @@ const progressbar = (props) => {
         height="40.5"
         rx="6.5"
         transform="matrix(-1 0 0 1 904 6.75)"
-        fill={props.fill[20]}
+        fill={props.fill[30]}
         fillOpacity="0.2"
       />
       <rect
@@ -408,7 +408,7 @@ const progressbar = (props) => {
         height="13.5"
         rx="6.75"
         transform="matrix(-1 0 0 1 1172 19.7679)"
-        fill={props.fill[20]}
+        fill={props.fill[40]}
         fillOpacity="0.2"
       />
       <rect
@@ -416,7 +416,7 @@ const progressbar = (props) => {
         height="25.0714"
         rx="7"
         transform="matrix(-1 0 0 1 1142 13.9821)"
-        fill={props.fill[20]}
+        fill={props.fill[39]}
         fillOpacity="0.2"
       />
     </svg>

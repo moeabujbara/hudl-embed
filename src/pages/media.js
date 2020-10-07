@@ -56,10 +56,10 @@ export default function Media(props) {
     setSelectedID(index.id);
     setIsPlaying(true);
     console.warn(audio.duration);
-    var interval = (audio.duration / 49) * 1000;
+    var interval = (audio.duration / 47) * 1000;
     var counter = 0;
     setInterval(() => {
-      setSvgColor([...svgColor, (svgColor[counter] = "darkgreen")]);
+      setSvgColor([...svgColor, (svgColor[counter] = "red")]);
       console.warn("svgColor", svgColor);
       counter++;
     }, interval);
@@ -83,6 +83,13 @@ export default function Media(props) {
     audio.play();
     setIsPlaying1(true);
     setCheck(true);
+    var interval = (audio.duration / 47) * 1000;
+    var counter = 0;
+    setInterval(() => {
+      setSvgColor([...svgColor, (svgColor[counter] = "red")]);
+      console.warn("svgColor", svgColor);
+      counter++;
+    }, interval);
   };
 
   const pauseMusic2 = () => {
