@@ -5,7 +5,12 @@ import logo from "../assets/logo.svg";
 import Media from "./media.js";
 import { useParams } from "react-router-dom";
 import footer from "../assets/footer.svg";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Moment from "react-moment";
+import facebook from "../assets/facebook.svg";
+import instgram from "../assets/instgram.svg";
+import youtube from "../assets/youtube.svg";
+import follow from "../assets/follow.svg";
 
 export default function Playlist() {
   let [playlist, setPlaylist] = useState(null);
@@ -22,11 +27,15 @@ export default function Playlist() {
       setError(error.message);
     }
   };
+  const ActionLink = (props) => {
+      return (
+   <a href="www.facebook.com"></a>
 
+      )
+  };
   useEffect(() => {
     fetchPlayistDetails();
   }, []);
-
   const setReleaseDate = (date) => {
     console.warn("HALA MADRID", date);
     setDate(date);
@@ -65,8 +74,40 @@ export default function Playlist() {
             playlistId={playlist.id}
           />
         </div>
-
-        <img id="footer" src={footer} alt="footer"></img>
+        <img id="follow" src={follow}></img>
+        <div id="footer">
+        <a target="_blank" href="https://twitter.com/HUDLMusic"> 
+          <img
+            id="twiter"
+            src={footer}
+            alt="footer"
+          ></img>
+          </a>
+          <a target="_blank" href="https://www.instagram.com/HUDLMusic">
+          <img
+            id="instgram"
+            src={instgram}
+            onClick={() => <a href="www.facebook.com" target="blank" />}
+            alt="footer"
+          ></img>
+          </a>
+          <a target="_blank" href="https://web.facebook.com/HUDLmusic/">
+          <img
+            id="facebook"
+            src={facebook}
+            onClick={() => <a href="www.facebook.com" target="blank" />}
+            alt="footer"
+          ></img>
+          </a>
+          <a target="_blank" href="https://www.youtube.com/channel/UCW94g9ZKwnT-LqV_vymDuLA">
+          <img
+            id="youtube"
+            src={youtube}
+            onClick={() => <a href="www.facebook.com" target="blank" />}
+            alt="footer"
+          ></img>
+          </a>
+        </div>
       </div>
     ) : (
       <h3>please try agian later</h3>

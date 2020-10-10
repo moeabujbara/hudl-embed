@@ -11,17 +11,19 @@ import repeat from "..//assets/repeat.svg";
 import Moment from "react-moment";
 import Progressbar from "./progressbar";
 
+
 export default function Media(props) {
   let [media, setMedia] = useState([]);
   let [svgColor, setSvgColor] = useState([]);
+  let [WsvgColor, setWsvgColor] = useState([]);
   let [error, setError] = useState(null);
   let [songURL, setSongURL] = useState(null);
   let [selectedID, setSelectedID] = useState(null);
-  let [isPlaying, setIsPlaying] = useState(false);
+  let [isPlaying, setisPlaying] = useState(false);
   let [show, setShow] = useState(false);
   let [maindisplay, setDisplay] = useState(null);
   let [boolofdisplay, setbool] = useState([false]);
-  let [isPlaying1, setIsPlaying1] = useState(false);
+  let [isPlaying1, setisPlaying1] = useState(false);
   let [isCheck, setCheck] = useState(false);
   let [newsongURL, setnewSongURL] = useState(null);
 
@@ -54,14 +56,13 @@ export default function Media(props) {
     console.warn(audio);
     audio.play();
     setSelectedID(index.id);
-    setIsPlaying(true);
-    console.warn(audio.duration);
+    setisPlaying(true);
+    console.warn("Condition-->",isPlaying);
     var interval = (audio.duration / 47) * 1000;
-    var counter = 0;
-    setInterval(() => {
-      setSvgColor([...svgColor, (svgColor[counter] = "red")]);
-      console.warn("svgColor", svgColor);
-      counter++;
+    var counter=0;
+    var y = setInterval(() => {
+           setSvgColor([...svgColor, (svgColor[counter] = "red")]);
+        counter++;
     }, interval);
   };
   const pauseMusic = () => {
@@ -69,7 +70,8 @@ export default function Media(props) {
     var audio = document.getElementById("audio");
     console.warn(audio);
     audio.pause();
-    setIsPlaying(false);
+    setisPlaying(false);
+    console.warn("Condition 2-->",isPlaying)
   };
 
   const playMusic2 = () => {
@@ -78,23 +80,17 @@ export default function Media(props) {
       setSelectedID(firstSong.id);
       setSongURL(firstSong.url);
     }
-    setIsPlaying(false);
+
+    setisPlaying(false);
     var audio = document.getElementById("audio");
     audio.play();
-    setIsPlaying1(true);
+    setisPlaying1(true);
     setCheck(true);
-    var interval = (audio.duration / 47) * 1000;
-    var counter = 0;
-    setInterval(() => {
-      setSvgColor([...svgColor, (svgColor[counter] = "red")]);
-      console.warn("svgColor", svgColor);
-      counter++;
-    }, interval);
   };
 
   const pauseMusic2 = () => {
-    setIsPlaying(false);
-    setIsPlaying1(false);
+    setisPlaying(false);
+    setisPlaying1(false);
     var audio = document.getElementById("audio");
     audio.pause();
   };
@@ -216,6 +212,7 @@ export default function Media(props) {
         <div id="audioSection">
           <audio id="audio" controls src={songURL}></audio>
           <Progressbar fill={svgColor} />
+
           <center>
             <img
               className="A"
