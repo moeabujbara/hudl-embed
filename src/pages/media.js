@@ -8,9 +8,10 @@ import copybutton from "..//assets/copy.svg";
 import play from "..//assets/play.svg";
 import shuffel from "..//assets/shuffel.svg";
 import repeat from "..//assets/repeat.svg";
-import Moment from "react-moment";
 import Progressbar from "./progressbar";
-
+var counter = 0;
+var interval=0;
+var y;
 
 export default function Media(props) {
   let [media, setMedia] = useState([]);
@@ -26,6 +27,7 @@ export default function Media(props) {
   let [isPlaying1, setisPlaying1] = useState(false);
   let [isCheck, setCheck] = useState(false);
   let [newsongURL, setnewSongURL] = useState(null);
+  let [flag, setflag] = useState(false);
 
   const fetchPlayistDetails = async () => {
     try {
@@ -46,32 +48,31 @@ export default function Media(props) {
     setSongURL(index.url);
     console.warn("list of songs1--->", songURL);
   };
-  const GlobalSong = (index) => {
-    setnewSongURL(index.url);
-    console.warn("newurlsong", newsongURL);
-  };
   const playMusic = (index) => {
-    console.warn("INDEX", index);
     var audio = document.getElementById("audio");
     console.warn(audio);
     audio.play();
     setSelectedID(index.id);
     setisPlaying(true);
-    console.warn("Condition-->",isPlaying);
-    var interval = (audio.duration / 47) * 1000;
-    var counter=0;
-    var y = setInterval(() => {
-           setSvgColor([...svgColor, (svgColor[counter] = "red")]);
+    setflag(true);
+    console.warn("flag-->",flag);
+    interval = (audio.duration / 47) * 1000;
+   
+     y = setInterval(() => {
+        setSvgColor([...svgColor, (svgColor[counter] ="red")]);
         counter++;
-    }, interval);
+        console.warn("Counter",counter);
+      }, interval);
   };
   const pauseMusic = () => {
+    clearInterval(y);
+    setflag(false);
     console.warn("PAUSE ", isPlaying);
     var audio = document.getElementById("audio");
     console.warn(audio);
     audio.pause();
     setisPlaying(false);
-    console.warn("Condition 2-->",isPlaying)
+    console.warn("Condition 2-->", isPlaying);
   };
 
   const playMusic2 = () => {
@@ -80,16 +81,22 @@ export default function Media(props) {
       setSelectedID(firstSong.id);
       setSongURL(firstSong.url);
     }
-
-    setisPlaying(false);
     var audio = document.getElementById("audio");
     audio.play();
     setisPlaying1(true);
     setCheck(true);
+    interval = (audio.duration / 47) * 1000;
+   
+    y = setInterval(() => {
+       setSvgColor([...svgColor, (svgColor[counter] ="red")]);
+       counter++;
+       console.warn("Counter",counter);
+     }, interval);
+ 
   };
 
   const pauseMusic2 = () => {
-    setisPlaying(false);
+    clearInterval(y);
     setisPlaying1(false);
     var audio = document.getElementById("audio");
     audio.pause();
@@ -135,11 +142,7 @@ export default function Media(props) {
     setSelectedID(selectedSong.id);
     setSongURL(selectedSong.url);
     var player = document.getElementById("audio");
-
     player.play();
-    console.warn(player.currentSrc());
-    console.warn(player.currentTime());
-    console.warn(player.duration());
   };
 
   if (error === null && media === null) {
@@ -212,7 +215,6 @@ export default function Media(props) {
         <div id="audioSection">
           <audio id="audio" controls src={songURL}></audio>
           <Progressbar fill={svgColor} />
-
           <center>
             <img
               className="A"
